@@ -43,7 +43,6 @@ src/
 - **React 19** (함수형 컴포넌트 + Hooks)
 - **Vite** (빠른 개발 서버, 빌드)
 - **Tailwind CSS v4** (유틸리티 스타일링)
-- **localStorage** (로컬 상태 영속화)
 
 ## 🚀 실행 방법
 
@@ -59,10 +58,3 @@ npm run dev
 ```bash
 npm run build
 ```
-
-빌드 결과물은 `dist/`에 생성됩니다.
-
-## 🧹 정리 (클린업)
-
-- `dist/`는 빌드 결과물로 언제든 삭제해도 되며, 재빌드 시 다시 생성됩니다.
-- `node_modules/`는 `npm install`로 다시 설치할 수 있습니다.
