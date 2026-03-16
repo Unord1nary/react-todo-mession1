@@ -48,12 +48,13 @@ export function useTodos() {
 
     // 특정 id의 할 일 완료 상태를 토글
     const toggleTodo = (id) => {
-        setTodos(
-            todos.map((todo) =>
-                todo.id === id ? { ...todo, completed: !todo.completed } : todo,
-            ),
-        )
+        setTodos(todos.map((todo) => (todo.id === id ? { ...todo, completed: !todo.completed } : todo)))
     }
 
-    return { todos, addTodo, removeTodo, toggleTodo }
+    // 특정 id의 할 일 내용을 수정
+    const editTodo = (id, value) => {
+        setTodos(todos.map((todo) => (todo.id === id ? { ...todo, value } : todo)))
+    }
+
+    return { todos, addTodo, removeTodo, toggleTodo, editTodo }
 }

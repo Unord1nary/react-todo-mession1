@@ -4,9 +4,13 @@ import { useTodos } from '../hooks/useTodos.js'
 const TodoContext = createContext(null)
 
 export function TodoProvider({ children }) {
-    const { todos, addTodo, removeTodo, toggleTodo } = useTodos()
+    const { todos, addTodo, removeTodo, toggleTodo, editTodo } = useTodos()
 
-    return <TodoContext.Provider value={{ todos, addTodo, removeTodo, toggleTodo }}>{children}</TodoContext.Provider>
+    return (
+        <TodoContext.Provider value={{ todos, addTodo, removeTodo, toggleTodo, editTodo }}>
+            {children}
+        </TodoContext.Provider>
+    )
 }
 
 export function useTodoContext() {
