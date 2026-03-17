@@ -4,7 +4,10 @@
 
 ## 📸 실행 화면
 
-![TodoApp 실행 화면](images/sample.png)
+<p align="center">
+  <img src="images/sample.png" width="400" />
+</p>
+
 
 ## ✅ 주요 기능
 
