@@ -8,17 +8,14 @@ const defaultTodos = [
     { id: 1, value: 'Velog 작성하기', completed: false },
 ]
 
-// 로컬스토리지에서 할 일 목록을 불러옴
-// 저장된 데이터가 없거나 빈 배열이면 기본 목록을 반환
-function loadTodos() {
-    const parsed = getStorage('todos')
-    if (!Array.isArray(parsed) || parsed.length === 0) {
-        return defaultTodos
-    }
-    return parsed
-}
-
 export function useTodos() {
+    // 로컬스토리지에서 할 일 목록을 불러옴
+    const loadTodos = () => {
+       const parsed = getStorage('todos')
+       // 저장된 데이터가 없거나 빈 배열이면 기본 목록을 반환
+       if (!Array.isArray(parsed) || parsed.length === 0) return defaultTodos
+       return parsed
+      }
     // 마지막으로 사용된 id를 추적 (렌더링과 무관하게 최신 값 유지)
     const lastId = useRef(3)
     // 할 일 목록 상태 (초기값은 loadTodos로 불러옴)

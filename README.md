@@ -2,6 +2,10 @@
 
 간단한 **React + Vite + Tailwind** 기반 할 일 관리 애플리케이션입니다.
 
+## 📸 실행 화면
+
+![TodoApp 실행 화면](images/sample.png)
+
 ## ✅ 주요 기능
 
 | 기능              | 설명                                                  |
@@ -12,6 +16,7 @@
 | 완료 체크         | 체크박스 클릭 시 완료 여부 토글 (체크시 할 일에 취소선 표시)    |
 | localStorage 저장 | 추가/삭제/체크 시 변경된 상태를 `localStorage`에 저장 |
 | 초기 로드         | 앱 실행 시 `localStorage`에서 데이터를 불러와 렌더링  |
+
 ## 📁 컴포넌트 구조
 
 ```
@@ -21,7 +26,7 @@ src/
 │  ├─ TodoList.jsx      # 할 일 목록 렌더링
 │  └─ TodoWriteForm.jsx # 입력 폼 + 등록 버튼
 ├─ context/
-│  └─ TodoContext.jsx   # Context + Provider (전역 상태 제공)
+│  └─ TodoContext.jsx   # 전역 상태관리 (useTodoContext())
 ├─ hooks/
 │  └─ useTodos.js       # todo 상태 및 로직 (localStorage 동기화 포함)
 ├─ utils/
@@ -30,19 +35,17 @@ src/
 └─ App.jsx              # 레이아웃 + 컴포넌트 조합
 ```
 
-### 수정하기 및 현재 목표의 갯수 (상태) 확인 기능 추가 예정
-
 ### 상태/기능 로직 위치
 
 - **로컬 상태 + localStorage 동기화**: `src/hooks/useTodos.js`
-- **전역 컨텍스트**: `src/context/TodoContext.jsx`
+- **전역 상태관리**: `src/context/TodoContext.jsx`
 - **UI/스타일**: Tailwind CSS (컴포넌트 내부)
 
 ## 🛠 기술 스택
 
-- **React 19** (함수형 컴포넌트 + Hooks)
-- **Vite** (빠른 개발 서버, 빌드)
-- **Tailwind CSS v4** (유틸리티 스타일링)
+- **React 19**
+- **Vite** 
+- **Tailwind CSS** 
 
 ## 🚀 실행 방법
 
