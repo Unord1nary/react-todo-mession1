@@ -14,7 +14,7 @@ function App() {
             <TodoWriteForm />
             <TodoList />
             <p className="mt-6 text-center text-sm text-slate-400">
-                {total}개 중 {completed}개를 완료했어요!
+                {total > 0 && completed === total ? '전부 완료했어요 😘' : `${total}개 중 ${completed}개를 완료했어요!`}
             </p>
         </div>
     )
