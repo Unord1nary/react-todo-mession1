@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { useTodoContext } from '../context/TodoContext.jsx'
 
-function TodoItem({ todo, onToggle, onRemove, onEdit }) {
+function TodoItem({ todo }) {
+    const { toggleTodo, removeTodo, editTodo } = useTodoContext()
     // 수정 모드 
     const [isEditing, setIsEditing] = useState(false)
     // 수정 중인 입력값 임시 저장
@@ -11,7 +13,7 @@ function TodoItem({ todo, onToggle, onRemove, onEdit }) {
         e.preventDefault()
         const trimmed = draft.trim()  // 앞뒤 공백 제거
         if (!trimmed) return           // 빈값이면 처리하지 않음
-        onEdit(todo.id, trimmed)       // 수정 반영
+        editTodo(todo.id, trimmed)     // 수정 반영
         setIsEditing(false)            // 수정 모드 종료
     }
 
@@ -28,7 +30,7 @@ function TodoItem({ todo, onToggle, onRemove, onEdit }) {
             <input
                 type="checkbox"
                 checked={todo.completed}
-                onChange={() => onToggle(todo.id)}
+                onChange={() => toggleTodo(todo.id)}
                 className="h-4 w-4 shrink-0"
             />
 
@@ -80,7 +82,7 @@ function TodoItem({ todo, onToggle, onRemove, onEdit }) {
                     {/* 삭제 버튼 */}
                     <button
                         type="button"
-                        onClick={() => onRemove(todo.id)}
+                        onClick={() => removeTodo(todo.id)}
                         className="rounded-lg border border-transparent bg-red-600 px-3 py-1 text-sm font-medium text-white transition hover:bg-red-500"
                     >
                         삭제
