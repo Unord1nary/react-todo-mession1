@@ -67,7 +67,7 @@ function TodoItem({ todo, onToggle, onRemove, onEdit }) {
                             todo.completed ? 'line-through text-slate-400' : 'text-slate-100'
                         }`}
                     >
-                        {todo.id} : {todo.value}
+                        {todo.value}
                     </span>
                     {/* 수정 버튼 */}
                     <button
