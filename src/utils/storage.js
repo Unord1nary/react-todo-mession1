@@ -14,6 +14,6 @@ export function setStorage(key, data) {
     try {
         localStorage.setItem(key, JSON.stringify(data)); // 객체/배열 등을 JSON 문자열로 변환 후 저장
     } catch {
-       console.log("저장 중 오류 발생")  // 저장 중 오류 발생 시 아무 처리도 하지 않음
+       console.log("저장 중 오류 발생")  // 저장 중 오류 발생 시 콘솔에 로그를 남김
     }
 }
